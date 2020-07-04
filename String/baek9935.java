@@ -12,8 +12,40 @@
 
 폭발 문자열은 같은 문자를 두 개 이상 포함하지 않는다.
 
+1. Stack 을 이용
 
 */
 public class baek9935 {
-    
+    public static void main(String [] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String bomb = sc.nextLine();
+        Stack<Character> stack = new Stack<Character>();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            char ch = str.charAt(i);
+            boolean isbomb = false;
+            if (ch == bomb.charAt(0) && stack.size() >= bomb.length()) {
+                isbomb = true;
+                for (int j = 0; j < bomb.length(); j++) {
+                    if (bomb.charAt(j) != stack.get(stack.size() - 1 - j)) {
+                        isbomb = false;
+                        break;
+                    }
+                }
+                if (isbomb) {
+                    for (int k = 0; k < bomb.length(); k++) {
+                        stack.pop();
+                    }
+                }
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        if (stack.isEmpty()) System.out.println("FRULA");
+        else {
+            while(!stack.isEmpty()) {
+                sb.append(stack.pop());
+            }
+        }
+        System.out.println(sb);
+    }
 }

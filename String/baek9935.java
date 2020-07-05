@@ -23,6 +23,7 @@ public class baek9935 {
         Stack<Character> stack = new Stack<Character>();
         for (int i = str.length() - 1; i >= 0; i--) {
             char ch = str.charAt(i);
+            stack.push(ch);
             boolean isbomb = false;
             if (ch == bomb.charAt(0) && stack.size() >= bomb.length()) {
                 isbomb = true;

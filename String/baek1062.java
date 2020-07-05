@@ -10,7 +10,65 @@
 
 
 */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 public class baek1062 {
+    static int N, K;
+    static boolean [] visit;
+    static String [] words;
+    static int max = 0;
+    
+    public static void main(String [] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
+        words = new String[N];
+        if (K < 5) System.out.println(0);
+        else if (K == 26) System.out.println(N);
+        else {
+            for (int i = 0; i < N; i++) {
+                String word = br.readLine();
+                words[i] = word.substring(4, word.length() - 4);
+            }
+            K-=5;
+            visit['a' - 97] = true;
+            visit['n' - 97] = true;
+            visit['t' - 97] = true;
+            visit['i' - 97] = true;
+            visit['c' - 97] = true;
+            dfs(0, 0);
+            System.out.println(max);
+        }
+    }
+    static void dfs(int start, int count) {
+        if (count == K) {
+            int canRead = 0;
+            for (int i = 0; i < N; i++) {
+                boolean isTrue = true;
+                for (int j = 0; j < words[i].length(); j++) {
+                    if (!visit[words[i].charAt(j) - 97]) {
+                        isTrue = false;
+                        break;
+                    }
 
+                }
+                if (isTrue) {
+                    canRead++;
+                }
+                
+            }
+            max = Math.max(canRead, max);
+            return;
+        }
+        for (int i = start; i < 26; i++) {
+            if (!visit[i]) {
+                visit[i] = true;
+                dfs(i, count + 1);
+                visit[i] = false;
+            }
+        }
+    }
 }

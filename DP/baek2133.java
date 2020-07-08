@@ -2,7 +2,8 @@
 3×N 크기의 벽을 2×1, 1×2 크기의 타일로 채우는 경우의 수를 구해보자.
 
 */
-public class baek2143 {
+import java.util.*;
+public class baek2133 {
     public static void main(String [] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

@@ -19,7 +19,7 @@ P1 = 5, P2 = 2, P3 = 8, P4 = 10인 경우에는
 카드 팩의 가격이 주어졌을 때, N개의 카드를 구매하기 위해 민규가 지불해야 하는 금액의 최솟값을 구하는 프로그램을 작성하시오. 
 N개보다 많은 개수의 카드를 산 다음, 나머지 카드를 버려서 N개를 만드는 것은 불가능하다. 즉, 구매한 카드팩에 포함되어 있는 카드 개수의 합은 N과 같아야 한다.
 */
-
+import java.util.*;
 public class baek16194 {
     public static void main(String [] args) {
         Scanner sc = new Scanner(System.in);

@@ -6,6 +6,7 @@
 아래 그림은 2×17 직사각형을 채운 한가지 예이다.
 d[n] = d[n-2] * 2 + d[n-1];
 */
+import java.util.*;
 public class baek11727 {
     public static void main(String [] args) {
         Scanner sc = new Scanner(System.in);

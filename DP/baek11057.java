@@ -7,6 +7,17 @@
 
 i 는 길이, j 는 마지막 숫자, k 는 그전의 숫자.
 
+for (int i = 0; i <= 9; i++) {
+    d[1][i] = 1;               
+}
+for (int i = 2; i <= n; i++) {
+    for (int j = 0; j <= 9; j++) {
+        for (int k = 0; k <= j; k++) {
+            d[i][j] += d[i-1][k]; 
+            d[i][j] %= mod;
+        }
+    }
+}
 
 */
 

@@ -16,7 +16,9 @@ N이 주어질 때, 길이가 N인 계단 수가 총 몇 개 있는지 구하는
 각 숫자의 양쪽에서 j-1 , j+1 을 더한다. 
 */
 import java.util.*;
+
 public class baek10844 {
+    static int mod = 1000000;
     public static void main(String [] args) {
         
         Scanner sc = new Scanner(System.in);

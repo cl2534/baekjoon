@@ -15,5 +15,44 @@ N = 3인 경우에 사전순으로 순열을 나열하면 다음과 같다.
 */
 import java.util.*;
 public class baek10972 {
-    
+    static boolean next_perm(int [] a) {
+        int i = a.length - 1;
+        while (i > 0 && a[i-1] >= a[i]) {
+            i-=1;
+        }
+        if (i <= 0) return false;
+        int j = a.length - 1;
+        while (a[j] <= a[i-1]) {
+            j -= 1;
+        }
+        int tmp = a[i-1];
+        a[i-1] = a[j];
+        a[j] = tmp;
+        j = a.length - 1;
+        while (i < j) {
+            tmp = a[i];
+            a[i] = a[j];
+            a[j] = tmp;
+            i+= 1;
+            j-= 1;
+        }
+        return true;
+    }
+    public static void main(String [] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int [] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+        if (next_perm(a)) {
+            for (int i = 0 ; i<n; i++) {
+                System.out.print(a[i] + " ");
+
+            }
+            System.out.println();
+        } else {
+            System.out.println("-1");
+        }
+    }
 }

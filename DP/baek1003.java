@@ -12,6 +12,7 @@ fibonacci(3)은 fibonacci(2)와 fibonacci(1)의 결과를 얻고, 2를 리턴한
 */
 import java.util.*;
 public class baek1003 {
+    public static void main(String [] args) {
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
     for (int j = 0; j < n; j++) {
@@ -33,4 +34,5 @@ public class baek1003 {
         }
         System.out.println(arr[num][0] + " " + arr[num][1]);
     }
+}
 }

@@ -11,6 +11,7 @@ d[i][2] = d[i-1][0] + d[i-1][1]
 
 import java.util.*;
 public class baek1309 {
+    public static void main(String [] args) {
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
     int [][] d = new int[n+1][3];
@@ -24,4 +25,5 @@ public class baek1309 {
         }
     }
     System.out.println((d[n][0] + d[n][1] + d[n][2]) % 9901);
+}
 }

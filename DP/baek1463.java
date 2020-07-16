@@ -44,6 +44,6 @@ public class baek1463 {
         Scanner sc = new Scanner(System.in);
         int n  = sc.nextInt();
         d = new int[n+1];
-        System.out.println(bottom[n]);
+        System.out.println(bottom(n));
     }
 }

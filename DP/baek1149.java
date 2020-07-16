@@ -10,6 +10,7 @@ i(2 ≤ i ≤ N-1)번 집의 색은 i-1번, i+1번 집의 색과 같지 않아�
 import java.util.*;
 
 public class baek1149 {
+    public static void main(String [] args) {
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
     int [][] d = new int[n+1][3];
@@ -25,4 +26,5 @@ public class baek1149 {
         d[i][2] = Math.min(d[i-1][1], d[i-1][0]) + a[i][2];
     } 
     System.out.println(Math.min(Math.min(d[n][0], d[n][1]), d[n][2]));
+}
 }
